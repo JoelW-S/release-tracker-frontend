@@ -1,0 +1,44 @@
+<div class="release-info">
+    <div *ngIf="release" class="release">
+        <div class="release-block">
+            <h4 class="release-title">{{release.name}}</h4>
+            <table class="table table-striped">
+                <tr>
+                    <th style="min-width: 80px;">GroupId</th>
+                    <th style="min-width: 80px;">artifactId</th>
+                    <th style="min-width: 80px;">Version</th>
+                    <th style="width:20px;"> </th>
+                    <th style="width:20px;"> </th>
+                </tr>
+                <tbody>
+                    <tr *ngFor="let artifact of release.artifacts">
+                        <td>{{ artifact.groupId }}</td>
+                        <td>{{ artifact.artifactId }}</td>
+                        <td>{{ artifact.version }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="release-block">
+            <table *ngFor="let hotfix of release.hotfixes" class="table table-striped">
+                <h2>Hotfix</h2>
+                <h4>{{ hotfix.name }}</h4>
+                <tr>
+                    <th style="min-width: 80px;">GroupId</th>
+                    <th style="min-width: 80px;">artifactId</th>
+                    <th style="min-width: 80px;">Version</th>
+                    <th style="width:20px;"> </th>
+                    <th style="width:20px;"> </th>
+                </tr>
+                <tbody>
+                    <tr *ngFor="let artifacts of hotfix.artifacts">
+                        <td>{{ artifacts.groupId }}</td>
+                        <td>{{ artifacts.artifactId }}</td>
+                        <td>{{ artifacts.version }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button (click)="goToReleases()">Back</button>
+        </div>
+    </div>
+</div>

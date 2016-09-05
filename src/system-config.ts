@@ -9,10 +9,16 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+  'ng2-bootstrap': 'vendor/ng2-bootstrap',
 };
 
 /** User packages configuration. */
 const packages: any = {
+  'ng2-bootstrap': {
+    format: 'cjs',
+    defaultExtension: 'js',
+    main: 'ng2-bootstrap.js'
+  }
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -36,6 +42,12 @@ const barrels: string[] = [
   // App specific barrels.
   'app',
   'app/shared',
+  'app/artifact',
+  'app/artifact-form',
+  'app/navbar',
+  'app/home',
+  'app/release',
+  'app/release-info',
   /** @cli-barrel */
 ];
 

@@ -1,0 +1,27 @@
+<div class="artifact-list">
+    <div class="artifacts-title">
+        <h2>Artifacts</h2>
+    </div>
+    <table class="table table-striped">
+        <tr>
+            <th style="min-width: 80px;">GroupId</th>
+            <th style="min-width: 80px;">artifactId</th>
+            <th style="min-width: 80px;">Version</th>
+            <th style="width:20px;"> </th>
+        </tr>
+        <tbody>
+            <tr *ngFor="let artifact of artifacts">
+                <td>{{ artifact.groupId }}</td>
+                <td>{{ artifact.artifactId }}</td>
+                <td>{{ artifact.version }}</td>
+                <td><button (click)="deleteArtifact(artifact)">delete</button></td>
+            </tr>
+            <tr *ngIf="error">
+                <td>{{ error }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+    <button (click)="createArtifact()">create new Artifact</button>
+    </div>
+</div>

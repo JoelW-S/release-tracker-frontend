@@ -1,0 +1,7 @@
+<div>
+  <ul class="nav nav-tabs">
+<li *ngFor="let tab of tabs" routerLink="{{ tab.link }}" [ngClass]="{ active: tab.active }" (click)="selectTab(tab)">
+  <a href="{{ tab.link }}">{{ tab.name }}</a>
+  </li> 
+</ul>
+</div>

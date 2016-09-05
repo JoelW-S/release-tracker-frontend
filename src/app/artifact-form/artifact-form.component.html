@@ -1,0 +1,37 @@
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <div id="login-overlay" class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h4 class="modal-title" id="myModalLabel">Create Artifact</h4>
+          </div>
+          <div class="modal-body">
+              <div class="row">
+                  <div class="col-xs-12">
+                      <div class="well">
+                          <form [ngFormModel]="artifactForm" (submit)="addArtifact()">
+                              <div class="form-group">
+                                  <label for="groupId" class="control-label">Group ID</label>
+                                  <input ngControl="groupId" type="text" placeholder="Enter group ID"class="form-control"  title="Please enter the group ID">
+                                  <span class="help-block"></span>
+                              </div>
+                              <div class="form-group">
+                                  <label for="artifactId" class="control-label">Artifact ID</label>
+                                  <input ngControl="artifactId" type="text" placeholder="Enter artifact ID" class="form-control" title="Please enter your artifact ID">
+                                  <span class="help-block"></span>
+                              </div>
+                               <div class="form-group">
+                                  <label for="version" class="control-label">Version</label>
+                                  <input ngControl="version" type="text" placeholder="Enter version of artifact" class="form-control" title="Please enter the version">
+                                  <span class="help-block"></span>
+                              </div>
+                              <div *ngIf="error" class="error ">{{ error }}</div>
+                              <div *ngIf="artifact" class="error ">The artifact has been successfully created!</div>
+                              <button type="submit" [disabled]="!artifactForm.valid" class="btn btn-success btn-block">Create artifact</button>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>

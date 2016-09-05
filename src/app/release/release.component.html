@@ -1,0 +1,9 @@
+<div class="release-list">
+
+ <ul class="list-releases">
+  <h4>Releases</h4>
+  <li *ngFor="let release of releases" class="list-group-item">
+      <a [routerLink]="['./info', release.name ]">{{release.name}}</a>
+  </li>
+</ul>
+</div>
