@@ -23,4 +23,10 @@ export class ReleaseService {
     .map(res => res.json())
     .catch( error => Observable.throw(error));
     }
+
+    updateRelease(release: Release): Observable<Release> {
+   return this._http.put(`${environment.releaseTrackerRestUrl}/release`, release)
+    .map(res => res.json())
+    .catch( error => Observable.throw(error.json().error));
+    }
 }

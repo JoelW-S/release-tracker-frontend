@@ -19,7 +19,7 @@ export class ArtifactFormComponent implements OnInit {
   submitted = false;
   artifact: Artifact;
   error: string;
-  constructor(private _artifactService: ArtifactService, private _fb: FormBuilder) {
+  constructor(private _artifactService: ArtifactService, private _fb: FormBuilder, private _router: Router) {
     this.artifactForm = this._fb.group({
       groupId: ["", Validators.required],
       artifactId: ["", Validators.required],
@@ -41,6 +41,10 @@ export class ArtifactFormComponent implements OnInit {
       data => this.artifact = data,
       error => this.error = error)
     return false;
+  }
+
+  goToArtifacts(){
+    this._router.navigate(['/artifact']);
   }
 }
 

@@ -40,7 +40,6 @@ export class ArtifactComponent implements OnInit {
 
   }
   
-  
   ngOnInit() {
     this.getArtifacts();
   }
